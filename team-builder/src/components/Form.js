@@ -39,6 +39,8 @@ const Form = ({ setTeamMember, teamMember }) => {
           placeholder="team members role"
           onChange={handleChange}
         />
+        <br />
+        <button type="submit">Submit</button>
       </fieldset>
     </form>
   );
