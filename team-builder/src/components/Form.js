@@ -33,12 +33,18 @@ const Form = ({ setTeamMember, teamMember }) => {
         <br />
         <label>Role:</label>
         <br />
-        <input
+        <select id="pet-select" onChange={handleChange}>
+          <option value="">--Select your role--</option>
+          <option value="frontend">Front End Developer</option>
+          <option value="backend">Back End Developer</option>
+          <option value="fullstack">Fullstack Developer</option>
+        </select>
+        {/* <input
           type="text"
           name="role"
           placeholder="team members role"
           onChange={handleChange}
-        />
+        /> */}
         <br />
         <button type="submit">Submit</button>
       </fieldset>

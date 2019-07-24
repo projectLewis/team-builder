@@ -7,11 +7,17 @@ const App = () => {
     email: "",
     role: ""
   });
+  const [currentTeam, setCurrentTeam] = useState();
 
   return (
     <div>
       <div>{teamMember.name}</div>
-      <Form setTeamMember={setTeamMember} teamMember={teamMember} />
+      <Form
+        teamMember={teamMember}
+        setTeamMember={setTeamMember}
+        currentTeam={currentTeam}
+        setCurrentTeam={setCurrentTeam}
+      />
     </div>
   );
 };
