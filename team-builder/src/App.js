@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div>
-      <div>{teamMember.name}</div>
+      {/* {currentTeam ? <div>{currentTeam}</div> : null} */}
       <Form
         teamMember={teamMember}
         setTeamMember={setTeamMember}

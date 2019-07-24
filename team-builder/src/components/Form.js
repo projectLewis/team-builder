@@ -1,8 +1,11 @@
 import React from "react";
 
-const Form = ({ setTeamMember, teamMember }) => {
+const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
   const handleSubmit = e => {
     e.preventDefault();
+    setCurrentTeam(teamMember);
+    setTeamMember({ name: "", email: "", role: "" });
+    console.log(currentTeam);
   };
   const handleChange = e => {
     console.log(e.target.value);
@@ -19,6 +22,7 @@ const Form = ({ setTeamMember, teamMember }) => {
           type="text"
           name="name"
           placeholder="name"
+          value={teamMember.name}
           onChange={handleChange}
         />
         <br />
@@ -28,12 +32,13 @@ const Form = ({ setTeamMember, teamMember }) => {
           type="email"
           name="email"
           placeholder="email"
+          value={teamMember.email}
           onChange={handleChange}
         />
         <br />
         <label>Role:</label>
         <br />
-        <select id="pet-select" onChange={handleChange}>
+        <select name="role" value={teamMember.role} onChange={handleChange}>
           <option value="">--Select your role--</option>
           <option value="frontend">Front End Developer</option>
           <option value="backend">Back End Developer</option>
