@@ -3,12 +3,12 @@ import React from "react";
 const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
   const handleSubmit = e => {
     e.preventDefault();
-    setCurrentTeam(teamMember);
+    setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
     setTeamMember({ name: "", email: "", role: "" });
-    console.log(currentTeam);
+    // console.log(currentTeam);
   };
   const handleChange = e => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setTeamMember({ ...teamMember, [e.target.name]: e.target.value });
   };
 
