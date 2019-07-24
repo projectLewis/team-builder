@@ -10,8 +10,8 @@ const App = () => {
 
   return (
     <div>
-      Test
-      <Form setTeamMembers={setTeamMember} />
+      <div>{teamMember.name}</div>
+      <Form setTeamMember={setTeamMember} teamMember={teamMember} />
     </div>
   );
 };
