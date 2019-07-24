@@ -6,7 +6,7 @@ const TeamDisplay = ({ currentTeam }) => {
       Current Team Members:
       {currentTeam
         ? currentTeam.map(member => {
-            return <span>{member.name}</span>;
+            return <span> {member.name}</span>;
           })
         : null}
     </div>

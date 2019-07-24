@@ -3,8 +3,16 @@ import React from "react";
 const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
   const handleSubmit = e => {
     e.preventDefault();
-    setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
-    setTeamMember({ name: "", email: "", role: "" });
+    if (currentTeam) {
+      currentTeam.forEach(member => {
+        if (teamMember.email === member.email) {
+          return;
+        }
+      });
+    } else {
+      setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
+      setTeamMember({ name: "", email: "", role: "" });
+    }
     // console.log(currentTeam);
   };
   const handleChange = e => {
@@ -24,6 +32,7 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
           placeholder="name"
           value={teamMember.name}
           onChange={handleChange}
+          required
         />
         <br />
         <label>Email:</label>
@@ -34,6 +43,7 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
           placeholder="email"
           value={teamMember.email}
           onChange={handleChange}
+          required
         />
         <br />
         <label>Role:</label>
