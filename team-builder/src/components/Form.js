@@ -19,7 +19,6 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
       setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
       setTeamMember({ name: "", email: "", role: "" });
     }
-    console.log(currentTeam);
   };
   const handleChange = e => {
     setTeamMember({

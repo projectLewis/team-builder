@@ -11,7 +11,6 @@ const App = () => {
   const [currentTeam, setCurrentTeam] = useState(null);
 
   const handleEdit = individual => {
-    console.log(currentTeam);
     setTeamMember({
       name: individual.name,
       email: individual.email,
