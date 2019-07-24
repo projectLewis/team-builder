@@ -11,9 +11,19 @@ const App = () => {
   });
   const [currentTeam, setCurrentTeam] = useState(null);
 
-  const handleEdit = () => {
-    setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
-    setTeamMember({ name: "", email: "", role: "" });
+  const handleEdit = individual => {
+    // setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
+    console.log(currentTeam);
+    console.log(individual.index);
+    setTeamMember({
+      name: individual.name,
+      email: individual.email,
+      role: individual.role
+    });
+    setCurrentTeam(prevTeam => {
+      prevTeam.splice(individual.index, 1);
+      return prevTeam;
+    });
   };
 
   return (

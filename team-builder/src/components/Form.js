@@ -1,7 +1,13 @@
 import React from "react";
 
 let counter = 0;
-const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
+const Form = ({
+  setTeamMember,
+  teamMember,
+  setCurrentTeam,
+  currentTeam,
+  edit
+}) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (currentTeam) {

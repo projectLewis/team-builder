@@ -9,7 +9,13 @@ const TeamDisplay = ({ currentTeam, handleEdit }) => {
             return (
               <span key={member.email}>
                 {member.name}
-                <button>edit</button>
+                <button
+                  onClick={() => {
+                    handleEdit(member);
+                  }}
+                >
+                  edit
+                </button>
               </span>
             );
           })
