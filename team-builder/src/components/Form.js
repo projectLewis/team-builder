@@ -66,21 +66,7 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
           <option value="backend">Back End Developer</option>
           <option value="fullstack">Fullstack Developer</option>
         </select>
-        {/* <input
-          type="text"
-          name="role"
-          placeholder="team members role"
-          onChange={handleChange}
-        /> */}
         <br />
-        {/* <input
-          type="number"
-          name="index"
-          placeholder="index"
-          value={counter}
-          onChange={handleChange}
-          // hidden
-        /> */}
         <button type="submit">Submit</button>
       </fieldset>
     </form>
