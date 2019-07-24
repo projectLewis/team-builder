@@ -1,5 +1,6 @@
 import React from "react";
 
+let counter = 0;
 const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -13,16 +14,22 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
           currentTeam ? [...currentTeam, teamMember] : [teamMember]
         );
         setTeamMember({ name: "", email: "", role: "" });
+        counter += 1;
         return;
       });
     } else {
       setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
       setTeamMember({ name: "", email: "", role: "" });
+      counter += 1;
     }
-    // console.log(currentTeam);
+    console.log(currentTeam);
   };
   const handleChange = e => {
-    setTeamMember({ ...teamMember, [e.target.name]: e.target.value });
+    setTeamMember({
+      ...teamMember,
+      [e.target.name]: e.target.value,
+      index: counter
+    });
   };
 
   return (
@@ -66,6 +73,14 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
           onChange={handleChange}
         /> */}
         <br />
+        {/* <input
+          type="number"
+          name="index"
+          placeholder="index"
+          value={counter}
+          onChange={handleChange}
+          // hidden
+        /> */}
         <button type="submit">Submit</button>
       </fieldset>
     </form>

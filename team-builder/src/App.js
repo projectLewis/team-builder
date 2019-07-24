@@ -6,13 +6,19 @@ const App = () => {
   const [teamMember, setTeamMember] = useState({
     name: "",
     email: "",
-    role: ""
+    role: "",
+    index: ""
   });
   const [currentTeam, setCurrentTeam] = useState(null);
 
+  const handleEdit = () => {
+    setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
+    setTeamMember({ name: "", email: "", role: "" });
+  };
+
   return (
     <div>
-      <TeamDisplay currentTeam={currentTeam} />
+      <TeamDisplay currentTeam={currentTeam} handleEdit={handleEdit} />
       {/* TODO: Make component to display current team members and edit them */}
       <Form
         teamMember={teamMember}

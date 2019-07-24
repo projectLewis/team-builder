@@ -1,6 +1,6 @@
 import React from "react";
 
-const TeamDisplay = ({ currentTeam }) => {
+const TeamDisplay = ({ currentTeam, handleEdit }) => {
   return (
     <div>
       Current Team Members:
