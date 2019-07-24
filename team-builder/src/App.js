@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div>
-      {/* {currentTeam ? <div>{currentTeam}</div> : null} */}
+      {/* TODO: Make component to display current team members and edit them */}
       <Form
         teamMember={teamMember}
         setTeamMember={setTeamMember}
