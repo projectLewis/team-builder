@@ -6,7 +6,7 @@ const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
     if (currentTeam) {
       currentTeam.forEach(member => {
         if (teamMember.email === member.email) {
-          return;
+          return alert("This email already exists. Try another");
         }
       });
     } else {
