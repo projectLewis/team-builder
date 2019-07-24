@@ -6,22 +6,19 @@ const App = () => {
   const [teamMember, setTeamMember] = useState({
     name: "",
     email: "",
-    role: "",
-    index: ""
+    role: ""
   });
   const [currentTeam, setCurrentTeam] = useState(null);
 
   const handleEdit = individual => {
-    // setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
     console.log(currentTeam);
-    console.log(individual.index);
     setTeamMember({
       name: individual.name,
       email: individual.email,
       role: individual.role
     });
     setCurrentTeam(prevTeam => {
-      prevTeam.splice(individual.index, 1);
+      prevTeam.splice(currentTeam.indexOf(individual), 1);
       return prevTeam;
     });
   };
@@ -29,7 +26,6 @@ const App = () => {
   return (
     <div>
       <TeamDisplay currentTeam={currentTeam} handleEdit={handleEdit} />
-      {/* TODO: Make component to display current team members and edit them */}
       <Form
         teamMember={teamMember}
         setTeamMember={setTeamMember}

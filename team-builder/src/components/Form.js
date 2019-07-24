@@ -1,13 +1,6 @@
 import React from "react";
 
-let counter = 0;
-const Form = ({
-  setTeamMember,
-  teamMember,
-  setCurrentTeam,
-  currentTeam,
-  edit
-}) => {
+const Form = ({ setTeamMember, teamMember, setCurrentTeam, currentTeam }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (currentTeam) {
@@ -20,21 +13,18 @@ const Form = ({
           currentTeam ? [...currentTeam, teamMember] : [teamMember]
         );
         setTeamMember({ name: "", email: "", role: "" });
-        counter += 1;
         return;
       });
     } else {
       setCurrentTeam(currentTeam ? [...currentTeam, teamMember] : [teamMember]);
       setTeamMember({ name: "", email: "", role: "" });
-      counter += 1;
     }
     console.log(currentTeam);
   };
   const handleChange = e => {
     setTeamMember({
       ...teamMember,
-      [e.target.name]: e.target.value,
-      index: counter
+      [e.target.name]: e.target.value
     });
   };
 
