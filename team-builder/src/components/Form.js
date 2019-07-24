@@ -1,12 +1,19 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ setTeamMember }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+  const handleChange = e => {
+    console.log(e.target.value);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <fieldset>
         <legend>Form</legend>
         <label>Add Team Member</label>
-        <input type="text" />
+        <input type="text" onChange={handleChange} />
       </fieldset>
     </form>
   );
