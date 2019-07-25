@@ -18,6 +18,7 @@ const App = () => {
     });
     setCurrentTeam(prevTeam => {
       prevTeam.splice(currentTeam.indexOf(individual), 1);
+      // splice returns the removed individual. Below returning list without that individual
       return prevTeam;
     });
   };
